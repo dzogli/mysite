@@ -2,8 +2,13 @@ backend:
   name: github
   repo: dzogli/mysite
   branch: main
-  base_url: https://api.github.com
-  auth_endpoint: login/oauth/authorize
+  commit_messages:
+    create: "Create {{collection}} {{slug}}"
+    update: "Update {{collection}} {{slug}}"
+    delete: "Delete {{collection}} {{slug}}"
+    uploadMedia: "Upload {{path}}"
+    deleteMedia: "Delete {{path}}"
+  # Убираем кастомный auth_endpoint, чтобы CMS использовала стандартный механизм токенов
 
 media_folder: "images"
 public_folder: "/images"
