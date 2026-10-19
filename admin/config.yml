@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: dzogli/mysite # ваш репозиторий
+  branch: main
+
+media_folder: "images" # папка, куда будут сохраняться загруженные вами картинки
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Страницы"
+    files:
+      - file: "index.html" # или путь к вашему файлу с контентом
+        label: "Главная страница"
+        name: "home"
+        fields:
+          - {label: "Заголовок", name: "title", widget: "string"}
+          - {label: "Главное изображение", name: "image", widget: "image"}
+          - {label: "Описание", name: "body", widget: "markdown"}
