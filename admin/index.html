@@ -4,12 +4,42 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Панель управления — Dzogli.kz</title>
-  <!-- Добавьте эту строчку связи с конфигом -->
-  <link href="config.yml" type="text/yaml" rel="cms-config-url" />
 </head>
 <body>
-  <!-- Подключаем скрипты Decap CMS -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Подключаем Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <!-- Явно загружаем config.yml при старте -->
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'dzogli/mysite',
+          branch: 'main'
+        },
+        media_folder: 'images',
+        public_folder: '/images',
+        collections: [
+          {
+            name: 'pages',
+            label: 'Страницы',
+            files: [
+              {
+                file: 'content.json',
+                label: 'Главная страница',
+                name: 'home',
+                fields: [
+                  { label: 'Заголовок', name: 'title', widget: 'string' },
+                  { label: 'Главное изображение', name: 'image', widget: 'image' },
+                  { label: 'Описание', name: 'body', widget: 'markdown' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
