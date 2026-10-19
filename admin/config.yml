@@ -2,8 +2,8 @@ backend:
   name: github
   repo: dzogli/mysite
   branch: main
-  # Включаем метод авторизации через токен
-  auth_type: implicit
+  base_url: https://api.github.com
+  auth_endpoint: login/oauth/authorize
 
 media_folder: "images"
 public_folder: "/images"
