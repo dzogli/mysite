@@ -6,40 +6,6 @@
   <title>Панель управления — Dzogli.kz</title>
 </head>
 <body>
-  <!-- Подключаем Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-  <!-- Явно загружаем config.yml при старте -->
-  <script>
-    CMS.init({
-      config: {
-        backend: {
-          name: 'github',
-          repo: 'dzogli/mysite',
-          branch: 'main'
-        },
-        media_folder: 'images',
-        public_folder: '/images',
-        collections: [
-          {
-            name: 'pages',
-            label: 'Страницы',
-            files: [
-              {
-                file: 'content.json',
-                label: 'Главная страница',
-                name: 'home',
-                fields: [
-                  { label: 'Заголовок', name: 'title', widget: 'string' },
-                  { label: 'Главное изображение', name: 'image', widget: 'image' },
-                  { label: 'Описание', name: 'body', widget: 'markdown' }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    });
-  </script>
 </body>
 </html>
