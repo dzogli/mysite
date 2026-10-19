@@ -2,13 +2,7 @@ backend:
   name: github
   repo: dzogli/mysite
   branch: main
-  commit_messages:
-    create: "Create {{collection}} {{slug}}"
-    update: "Update {{collection}} {{slug}}"
-    delete: "Delete {{collection}} {{slug}}"
-    uploadMedia: "Upload {{path}}"
-    deleteMedia: "Delete {{path}}"
-  # Убираем кастомный auth_endpoint, чтобы CMS использовала стандартный механизм токенов
+  site_id: mysite-peach-xi.vercel.app
 
 media_folder: "images"
 public_folder: "/images"
