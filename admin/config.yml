@@ -1,16 +1,16 @@
 backend:
   name: github
-  repo: dzogli/mysite # ваш репозиторий
+  repo: dzogli/mysite
   branch: main
 
-media_folder: "images" # папка, куда будут сохраняться загруженные вами картинки
+media_folder: "images"
 public_folder: "/images"
 
 collections:
   - name: "pages"
     label: "Страницы"
     files:
-      - file: "index.html" # или путь к вашему файлу с контентом
+      - file: "content.json"
         label: "Главная страница"
         name: "home"
         fields:
